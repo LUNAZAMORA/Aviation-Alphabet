@@ -14,3 +14,4 @@ def print_menu():
     print("\t2-. Decodificar mensaje.")
     print("\t3-. Salir.")
 
+print_menu()
