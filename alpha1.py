@@ -1,6 +1,9 @@
 
-alphabet ={ "alpha" : 'a'
+alphabet ={ "alpha" : 'a',
+            "bravo" : 'b',
+            "charlie" : 'c',
 
         }
-print(alphabet["alpha"])
-print(hola mundo)
+for key, value in alphabet.items():
+    print("Key: %s, value: %s" % (key, value))
+print("hola mundo")
