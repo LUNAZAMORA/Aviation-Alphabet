@@ -1,1 +1,1 @@
-print(hi im beta)
+print("hi im beta")
