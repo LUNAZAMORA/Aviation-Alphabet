@@ -12,3 +12,5 @@ def print_menu():
     print("Tienes las siguientes opciones: ")
     print("\t1-. Codificar mensaje.")
     print("\t2-. Decodificar mensaje.")
+    print("\t3-. Salir.")
+
