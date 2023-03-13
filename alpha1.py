@@ -110,7 +110,8 @@ while(opt != 5):
         print(res)
     elif opt == 4:
         print("Si quieres salir, escribe: 'exit'.")
-        for i in range(random.randint(1, 11)):
+        #for i in range(random.randint(1, 11)):
+        while(True):
             print()
             print("Cual es el valor para la siguiente letra en el alfabeto de aviacion: ", end ='')
             print(choice:= random.choice(list(alphabet_letters.keys())))
