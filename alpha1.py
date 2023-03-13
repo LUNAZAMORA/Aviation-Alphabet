@@ -2,6 +2,24 @@
 alphabet ={ "alpha" : 'a',
             "bravo" : 'b',
             "charlie" : 'c',
+            "delta" : 'd',
+            "echo" : 'e',
+            "foxtrot" : 'f',
+            "golf" : 'g',
+            "hotel" : 'h',
+            "india" : 'i',
+            "juliet" : 'j',
+            "kilo" : 'k',
+            "lima" : 'l',
+            "mike" : 'm',
+            "november" : 'n',
+            "o" : 'g',
+            "p" : 'h',
+            "quebec" : 'q',
+            "romeo" : 'r',
+            "kilo" : 'k',
+            "lima" : 'l',
+            "mike" : 'm',
 
         }
 for key, value in alphabet.items():
@@ -28,12 +46,15 @@ def process_option(option):
 
 print_menu()
 opt = 0
-while(opt != 3):
+while(opt != 4):
     opt = input()
-    if opt != '1' or opt != '2' or opt != '3' or opt != '4': 
+    if opt != '1' and opt != '2' and opt != '3' and opt != '4': 
         print("Invalid Option!")
+        print_menu()
+        continue
     opt = int(opt)
-    print_menu()
     if opt == 1:
         print("Dame el mensaje a codificar: ")
         msg = input().strip().split()
+        #print(msg)
+    print_menu()
