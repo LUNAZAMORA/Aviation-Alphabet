@@ -71,11 +71,11 @@ print("hola mundo")
 
 def print_menu():
     print("Tienes las siguientes opciones: ")
-    print("\t0-. Recuerdame el alfabeto.")
-    print("\t1-. Codificar mensaje.")
-    print("\t2-. Decodificar mensaje.")
-    print("\t3-. MiniJuego.")
-    print("\t4-. Salir.")
+    print("\t1-. Recuerdame el alfabeto.")
+    print("\t2-. Codificar mensaje.")
+    print("\t3-. Decodificar mensaje.")
+    print("\t4-. MiniJuego.")
+    print("\t5-. Salir.")
 def process_option(option):
     if opt != '1' or opt != '2' or opt != '3' or opt != '4': 
         print("Invalid Option!")
@@ -83,17 +83,17 @@ def process_option(option):
 
 print_menu()
 opt = 0
-while(opt != 4):
+while(opt != 5):
     opt = input()
-    if opt != '1' and opt != '2' and opt != '3' and opt != '4': 
+    if opt != '1' and opt != '2' and opt != '3' and opt != '4' and opt != '5':
         print("Invalid Option!")
         print_menu()
         continue
     opt = int(opt)
-    if opt == 0:
+    if opt == 1:
         for key, value in alphabet_letters.items():
             print(key, ": ", value)
-    elif opt == 1:
+    elif opt == 2:
         print("Dame el mensaje a codificar: ")
         msg = list(map(str.lower, input().strip().split()))
         sentence = []
@@ -102,22 +102,28 @@ while(opt != 4):
             sentence.append(res)
         final = ' '.join(sentence)
         print(final)
-    elif opt == 2:
+    elif opt == 3:
         print("Dame el mensaje a decodificar: ")
         msg = list(map(str.lower, input().strip().split()))
         #print(msg)
         res = ''.join(list(map(lambda x: alphabet_words[x], msg)))
         print(res)
-    elif opt == 3:
+    elif opt == 4:
+        print("Si quieres salir, escribe: 'exit'.")
         for i in range(random.randint(1, 11)):
+            print()
             print("Cual es el valor para la siguiente letra en el alfabeto de aviacion: ", end ='')
             print(choice:= random.choice(list(alphabet_letters.keys())))
             res = input().strip().lower()
-            if res == alphabet_letters[choice]:
+            if res == "exit":
+                print("Hasta Luego!")
+                break
+            elif res == alphabet_letters[choice]:
                 print("Correcto!")
             else:
                 print("Eso es incorrecto!")
         #continue
-    else:
+    elif opt == 5:
+        print("Nos vemos!")
         break
     print_menu()
