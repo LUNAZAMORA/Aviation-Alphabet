@@ -91,8 +91,12 @@ while(opt != 5):
         continue
     opt = int(opt)
     if opt == 1:
+        print()
+        print("El alfabeto de aviacion es:")
+        print()
         for key, value in alphabet_letters.items():
-            print(key, ": ", value)
+            print("\t", key, ": ", value)
+        print()
     elif opt == 2:
         print("Dame el mensaje a codificar: ")
         msg = list(map(str.lower, input().strip().split()))
@@ -111,18 +115,26 @@ while(opt != 5):
     elif opt == 4:
         print("Si quieres salir, escribe: 'exit'.")
         #for i in range(random.randint(1, 11)):
+        good = 0
         while(True):
             print()
             print("Cual es el valor para la siguiente letra en el alfabeto de aviacion: ", end ='')
             print(choice:= random.choice(list(alphabet_letters.keys())))
             res = input().strip().lower()
             if res == "exit":
+                print("Obtuviste %s respuestas correctas." % good)
                 print("Hasta Luego!")
+                print()
                 break
             elif res == alphabet_letters[choice]:
                 print("Correcto!")
+                good += 1
             else:
                 print("Eso es incorrecto!")
+                print("La respuesta correcta es: %s" % alphabet_letters[choice])
+                print("Obtuviste %s respuestas correctas." % good)
+                print()
+                break
         #continue
     elif opt == 5:
         print("Nos vemos!")
