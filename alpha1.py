@@ -105,11 +105,14 @@ while(opt != 4):
         res = ''.join(list(map(lambda x: alphabet_words[x], msg)))
         print(res)
     elif opt == 3:
-        print("Cual es el valor para la siguiente letra en el alfabeto de aviacion: ", end ='')
-        print(choice:= random.choice(list(alphabet_letters.keys())))
-        res = input()
-        if res == alphabet_letters[choice]:
-            print("Correcto!")
+        for i in range(random.randint(1, 11)):
+            print("Cual es el valor para la siguiente letra en el alfabeto de aviacion: ", end ='')
+            print(choice:= random.choice(list(alphabet_letters.keys())))
+            res = input().strip().lower()
+            if res == alphabet_letters[choice]:
+                print("Correcto!")
+            else:
+                print("Eso es incorrecto!")
         #continue
     else:
         break
