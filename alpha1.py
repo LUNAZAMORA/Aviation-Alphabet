@@ -71,6 +71,7 @@ print("hola mundo")
 
 def print_menu():
     print("Tienes las siguientes opciones: ")
+    print("\t0-. Recuerdame el alfabeto.")
     print("\t1-. Codificar mensaje.")
     print("\t2-. Decodificar mensaje.")
     print("\t3-. MiniJuego.")
@@ -89,7 +90,10 @@ while(opt != 4):
         print_menu()
         continue
     opt = int(opt)
-    if opt == 1:
+    if opt == 0:
+        for key, value in alphabet_letters.items():
+            print(key, ": ", value)
+    elif opt == 1:
         print("Dame el mensaje a codificar: ")
         msg = list(map(str.lower, input().strip().split()))
         sentence = []
